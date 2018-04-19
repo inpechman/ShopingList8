@@ -50,8 +50,10 @@ public class Department extends Product {
             String name = jsonObject.getString("name");
             int barcode = jsonObject.getInt("barcode");
             String imagePath = jsonObject.getString("image");
+            File imageFile = new File(imagePath);
             Department department = new Department(barcode, name);
-            if (imagePath != null){
+            if (imageFile.isFile()){
+                System.out.println("AAA " + "setted a null image ");
                 department.setImage(new File(imagePath));
             }
             department.setIsDepartment(true);

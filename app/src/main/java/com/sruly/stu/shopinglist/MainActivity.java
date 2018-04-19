@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AppShared.initializeProgram(getApplicationContext());
+        System.out.println("AAA " + AppShared.rootDepartment.toJson().toString());
+
         SparseIntArray sparseIntArray = new SparseIntArray();
         sparseIntArray.put(123,352345);
         sparseIntArray.append(234,667);

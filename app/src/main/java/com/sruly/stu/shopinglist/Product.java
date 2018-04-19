@@ -69,6 +69,8 @@ public class Product {
             productJson.put("name", name);
             if (image != null){
                 productJson.put("image", image.getAbsolutePath());
+            } else {
+                productJson.put("image", JSONObject.NULL);
             }
             productJson.put("isDepartment", isDepartment);
 
@@ -84,10 +86,14 @@ public class Product {
         try {
             String name = jsonObject.getString("name");
             int barcode = jsonObject.getInt("barcode");
-            String imagePath = jsonObject.getString("image");
+            String imagePath = null;
             Product product = new Product(barcode, name);
-            if (imagePath != null){
-                product.setImage(new File(imagePath));
+            if (!jsonObject.isNull("image")) {
+                imagePath = jsonObject.getString("image");
+                File imageFile = new File(imagePath);
+                if (imageFile.isFile()){
+                    product.setImage(new File(imagePath));
+                }
             }
             return product;
         } catch (JSONException e) {

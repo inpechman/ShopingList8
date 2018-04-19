@@ -30,6 +30,13 @@ public class AppShared {
         File rootAppFolder = context.getFilesDir();
         File settingsFolder = new File(rootAppFolder, "settings");
         settingsFolder.mkdir();
+        try {
+            File file = new File(settingsFolder, "test");
+            file.createNewFile();
+            System.out.println("AAA " + file.getAbsolutePath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         savedSettings = new File(settingsFolder, "saved_settings.json");
         if (savedSettings.isFile()){
             loadFromFile(context);
