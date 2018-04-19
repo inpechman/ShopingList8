@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             AssetManager mgr = getAssets();
             InputStream is = mgr.open("default_settings.json");
+
             byte[] buffer = new byte[1024];
             int counter = 0;
             String str = "";
