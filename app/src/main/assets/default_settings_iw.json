@@ -6,19 +6,19 @@
     "image": null,
     "products":[
       {
-        "name": "beef",
+        "name": "בקר",
         "barcode": 1234345,
         "image": null,
         "isDepartment": false
       },
       {
-        "name": "chicken",
+        "name": "עוף",
         "barcode": 5234534,
-        "image": "/data/user/0/com.sruly.stu.shopinglist/files/settings/test",
+        "image": null,
         "isDepartment": false
       },
       {
-        "name": "goose",
+        "name": "אווז",
         "barcode": 846547334,
         "image": null,
         "isDepartment": false

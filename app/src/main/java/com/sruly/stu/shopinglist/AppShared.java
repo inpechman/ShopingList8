@@ -14,6 +14,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Locale;
 
 /**
  * Created by stu on 4/18/2018.
@@ -46,9 +47,12 @@ public class AppShared {
     }
 
     private static void loadFromAsset(Context context) {
+        Locale locale = context.getResources().getConfiguration().getLocales().get(0);
+        String lang = locale.getLanguage();
+        System.out.println("AAA " + lang);
         try {
             AssetManager mgr = context.getAssets();
-            InputStream inputStream = mgr.open("default_settings.json");
+            InputStream inputStream = mgr.open("default_settings_" + lang + ".json");
             StringBuilder stringBuilder = new StringBuilder();
             byte[] buffer = new byte[1024];
             int counter = 0;

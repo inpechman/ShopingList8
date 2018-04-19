@@ -5,11 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.SparseIntArray;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,9 +23,11 @@ public class MainActivity extends AppCompatActivity {
         sparseIntArray.put(123,352345);
         sparseIntArray.append(234,667);
         System.out.println("AAA " + sparseIntArray);
+        Locale locale = getResources().getConfiguration().getLocales().get(0);
+        String lang = locale.getLanguage();
         try {
             AssetManager mgr = getAssets();
-            InputStream is = mgr.open("default_settings.json");
+            InputStream is = mgr.open("default_settings_" + lang + ".json");
             byte[] buffer = new byte[1024];
             int counter = 0;
             String str = "";

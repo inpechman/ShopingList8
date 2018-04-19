@@ -1,0 +1,31 @@
+{
+  "rootDepartment":{
+    "name":"root",
+    "barcode":123456,
+    "isDepartment":true,
+    "image": null,
+    "products":[
+      {
+        "name": "beef",
+        "barcode": 1234345,
+        "image": null,
+        "isDepartment": false
+      },
+      {
+        "name": "chicken",
+        "barcode": 5234534,
+        "image": null,
+        "isDepartment": false
+      },
+      {
+        "name": "goose",
+        "barcode": 846547334,
+        "image": null,
+        "isDepartment": false
+      }
+    ]
+  },
+  "shoppingLists":[
+  ],
+  "idBase":1000
+}
