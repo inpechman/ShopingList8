@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.SparseIntArray;
 
+import com.sruly.stu.shopinglist.logic.AppShared;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;

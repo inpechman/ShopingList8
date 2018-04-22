@@ -1,4 +1,4 @@
-package com.sruly.stu.shopinglist;
+package com.sruly.stu.shopinglist.logic;
 
 import org.json.JSONException;
 import org.json.JSONObject;
