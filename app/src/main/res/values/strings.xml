@@ -4,4 +4,5 @@
     <string name="show_shopping_lists_btn_text">open shopping list</string>
     <string name="manage_btn_text">manage</string>
     <string name="open_shopping_list_btn_text">open</string>
+    <string name="edit_shopping_list_btn_text">edit</string>
 </resources>

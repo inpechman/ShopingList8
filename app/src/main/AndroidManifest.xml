@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".CreateShoppingList" />
         <activity android:name=".ShowShoppingLists" />
-        <activity android:name=".OpenShoppingList"></activity>
+        <activity android:name=".OpenShoppingList" />
+        <activity android:name=".EditShoppingList"></activity>
     </application>
 
 </manifest>

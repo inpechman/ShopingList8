@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.sruly.stu.shopinglist.guihelpers.ShoppingListsAdapter;
+
 public class ShowShoppingLists extends AppCompatActivity {
     RecyclerView recyclerView;
     FloatingActionButton fab;
@@ -19,7 +21,7 @@ public class ShowShoppingLists extends AppCompatActivity {
         fab = findViewById(R.id.new_shopping_list_btn);
         recyclerView = findViewById(R.id.show_shopping_lists_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerView.setAdapter();
+        recyclerView.setAdapter(new ShoppingListsAdapter(getApplicationContext()));
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

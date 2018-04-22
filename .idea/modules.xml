@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ShopingList8.iml" filepath="$PROJECT_DIR$/ShopingList8.iml" />
       <module fileurl="file://C:\Users\sruly\AndroidStudioProjects\ShopingList81\ShopingList8.iml" filepath="C:\Users\sruly\AndroidStudioProjects\ShopingList81\ShopingList8.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShopingList81.iml" filepath="$PROJECT_DIR$/ShopingList81.iml" />
       <module fileurl="file://C:\Users\stu\GitHubShare\ShopingList8\.idea\ShopingList81.iml" filepath="C:\Users\stu\GitHubShare\ShopingList8\.idea\ShopingList81.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\sruly\AndroidStudioProjects\ShopingList81\app\app.iml" filepath="C:\Users\sruly\AndroidStudioProjects\ShopingList81\app\app.iml" />
     </modules>
   </component>
 </project>
