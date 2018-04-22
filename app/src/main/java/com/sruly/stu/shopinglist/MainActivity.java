@@ -1,9 +1,12 @@
 package com.sruly.stu.shopinglist;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.SparseIntArray;
+import android.view.View;
+import android.widget.Button;
 
 import com.sruly.stu.shopinglist.logic.AppShared;
 
@@ -12,13 +15,35 @@ import java.io.InputStream;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-
+    Button createSoppingListBtn, showShoppingListsBtn, manageBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         AppShared.initializeProgram(getApplicationContext());
+
+        createSoppingListBtn = findViewById(R.id.create_shopping_list_btn);
+        showShoppingListsBtn = findViewById(R.id.show_shopping_lists_btn);
+        manageBtn = findViewById(R.id.manage_btn);
+
+        createSoppingListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CreateShoppingList.class);
+                startActivity(intent);
+            }
+        });
+
+        showShoppingListsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ShowShoppingLists.class);
+                startActivity(intent);
+            }
+        });
+
+/*
         System.out.println("AAA " + AppShared.rootDepartment.toJson().toString());
 
         SparseIntArray sparseIntArray = new SparseIntArray();
@@ -40,5 +65,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+*/
     }
 }

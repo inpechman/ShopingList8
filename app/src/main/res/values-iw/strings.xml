@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="create_shopping_list_btn_text">רשימת קניות חדשה</string>
+    <string name="show_shopping_lists_btn_text">פתח רשימת קניות</string>
+    <string name="manage_btn_text">ניהול</string>
+    <string name="app_name">רשימת קניות</string>
+    <string name="open_shopping_list_btn_text">open</string>
+</resources>

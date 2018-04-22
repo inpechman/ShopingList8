@@ -1,5 +1,6 @@
 package com.sruly.stu.shopinglist.logic;
 
+import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
 
 import org.json.JSONArray;
@@ -13,6 +14,7 @@ import org.json.JSONObject;
 
 public class ShoppingList {
     SparseIntArray productsQuantity = new SparseIntArray();
+    SparseBooleanArray boughtProducts = new SparseBooleanArray();
     String name;
     int id;
 
@@ -70,6 +72,19 @@ public class ShoppingList {
         }
     }
 
+    public void buyProduct(Product product){
+        int barcode = product.getBarcode();
+        boughtProducts.append(barcode, true);
+    }
+
+    public void returnProduct(Product product){
+        boughtProducts.delete(product.getBarcode());
+    }
+
+    public boolean stileNeedsProduct(Product product){
+        return productsQuantity.get(product.getBarcode()) > 0 && boughtProducts.get(product.getBarcode());
+    }
+
     public JSONObject toJson(){
         try {
             JSONObject shoppingListJson = new JSONObject();
@@ -89,6 +104,15 @@ public class ShoppingList {
             }
 
             shoppingListJson.put("productsQuantity", allProductsQuantityJson);
+
+            JSONArray boughtProductsJson = new JSONArray();
+
+            for (int i = 0; i < boughtProducts.size(); i++) {
+                boughtProductsJson.put(boughtProducts.keyAt(i));
+            }
+
+            shoppingListJson.put("boughtProducts", boughtProductsJson);
+
             return shoppingListJson;
         } catch (JSONException e) {
             e.printStackTrace();
@@ -110,6 +134,11 @@ public class ShoppingList {
                 int key = singleProductJson.getInt("key");
                 int value = singleProductJson.getInt("value");
                 shoppingList.productsQuantity.append(key, value);
+            }
+
+            JSONArray boughtProductsJson = jsonObject.getJSONArray("boughtProducts");
+            for (int i = 0; i < boughtProductsJson.length(); i++) {
+                shoppingList.boughtProducts.append(boughtProductsJson.getInt(i), true);
             }
             return shoppingList;
 

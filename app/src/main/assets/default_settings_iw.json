@@ -26,6 +26,50 @@
     ]
   },
   "shoppingLists":[
+    {
+      "name" : "sruly1",
+      "id" : 10002,
+      "productsQuantity": [
+        {
+          "key": 5412345,
+          "value": 15
+        },
+        {
+          "key": 34235,
+          "value": 30
+        },
+        {
+          "key": 745634,
+          "value": 2
+        }
+      ],
+      "boughtProducts": [
+        34235,
+        5412345
+      ]
+    },
+    {
+      "name" : "sruly2",
+      "id" : 10002,
+      "productsQuantity": [
+        {
+          "key": 5412345,
+          "value": 15
+        },
+        {
+          "key": 34235,
+          "value": 30
+        },
+        {
+          "key": 745634,
+          "value": 2
+        }
+      ],
+      "boughtProducts": [
+        34235,
+        5412345
+      ]
+    }
   ],
   "idBase":1000
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Shoping List</string>
+    <string name="create_shopping_list_btn_text">new shopping list</string>
+    <string name="show_shopping_lists_btn_text">open shopping list</string>
+    <string name="manage_btn_text">manage</string>
+    <string name="open_shopping_list_btn_text">open</string>
 </resources>
