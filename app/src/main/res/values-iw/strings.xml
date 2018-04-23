@@ -6,4 +6,6 @@
     <string name="app_name">רשימת קניות</string>
     <string name="open_shopping_list_btn_text">open</string>
     <string name="edit_shopping_list_btn_text">edit</string>
+    <string name="enter_list_name_field_text">enter name for shopping list</string>
+    <string name="enter_list_name_btn_text">start</string>
 </resources>

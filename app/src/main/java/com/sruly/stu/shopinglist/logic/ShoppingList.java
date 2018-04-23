@@ -72,6 +72,10 @@ public class ShoppingList {
         }
     }
 
+    public int getProductQuantity(int barcode){
+        return productsQuantity.get(barcode);
+    }
+
     public void buyProduct(Product product){
         int barcode = product.getBarcode();
         boughtProducts.append(barcode, true);

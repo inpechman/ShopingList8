@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 
 public class Department extends Product {
-    ArrayList<Product> products = new ArrayList<>();
+    public ArrayList<Product> products = new ArrayList<>();
 
     public Department(int barcode, String name) {
         super(barcode, name);
