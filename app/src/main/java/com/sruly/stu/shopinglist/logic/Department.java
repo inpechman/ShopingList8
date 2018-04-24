@@ -45,6 +45,22 @@ public class Department extends Product {
         return null;
     }
 
+    public Product findProductByBarcode(int barcode){
+        Product result;
+        for (Product product : products) {
+            if (product.getBarcode() == barcode){
+                return product;
+            }
+            if (product.isDepartment()){
+                result = ((Department) product).findProductByBarcode(barcode);
+                if (result != null){
+                    return result;
+                }
+            }
+        }
+        return null;
+    }
+
     public static Department fromJson(JSONObject jsonObject){
         try {
             String name = jsonObject.getString("name");

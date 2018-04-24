@@ -72,6 +72,19 @@ public class ShoppingList {
         }
     }
 
+    public void addProductToListByBarcode(int barcode){
+        productsQuantity.append(barcode, productsQuantity.get(barcode) + 1);
+    }
+
+    public void removeProductFromListByBarcode(int barcode){
+        int oldValue = productsQuantity.get(barcode);
+        if (oldValue <= 1) {
+            productsQuantity.delete(barcode);
+        } else {
+            productsQuantity.put(barcode, oldValue - 1);
+        }
+    }
+
     public int getProductQuantity(int barcode){
         return productsQuantity.get(barcode);
     }

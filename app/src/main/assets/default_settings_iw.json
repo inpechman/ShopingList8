@@ -22,6 +22,32 @@
         "barcode": 846547334,
         "image": null,
         "isDepartment": false
+      },
+      {
+        "name":"test",
+        "barcode":123456,
+        "isDepartment":true,
+        "image": null,
+        "products":[
+          {
+            "name": "בקר",
+            "barcode": 1234345,
+            "image": null,
+            "isDepartment": false
+          },
+          {
+            "name": "עוף",
+            "barcode": 5234534,
+            "image": null,
+            "isDepartment": false
+          },
+          {
+            "name": "אווז",
+            "barcode": 846547334,
+            "image": null,
+            "isDepartment": false
+          }
+        ]
       }
     ]
   },

@@ -5,18 +5,29 @@
     >
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:id="@+id/department_image_view"/>
+        android:id="@+id/department_image_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_weight="0"
+        android:padding="16dp" />
 
     <TextView
+        android:id="@+id/department_name"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/department_name"/>
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:textSize="36sp" />
 
     <TextView
+        android:id="@+id/department_barcode"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/department_barcode"/>
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:textSize="24sp" />
 
 </LinearLayout>
