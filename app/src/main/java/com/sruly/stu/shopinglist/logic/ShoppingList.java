@@ -7,6 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 /**
  * Created by stu on 4/17/2018.
  *
@@ -89,17 +91,54 @@ public class ShoppingList {
         return productsQuantity.get(barcode);
     }
 
-    public void buyProduct(Product product){
-        int barcode = product.getBarcode();
+    public void buyProduct(int barcode){
         boughtProducts.append(barcode, true);
     }
 
-    public void returnProduct(Product product){
-        boughtProducts.delete(product.getBarcode());
+    public void returnProduct(int barcode){
+        boughtProducts.delete(barcode);
     }
 
     public boolean stileNeedsProduct(Product product){
-        return productsQuantity.get(product.getBarcode()) > 0 && boughtProducts.get(product.getBarcode());
+        if (!product.isDepartment()) {
+            return productsQuantity.get(product.getBarcode()) > 0 && !boughtProducts.get(product.getBarcode());
+        } else {
+            for (Product product1 : ((Department) product).products) {
+                boolean result = stileNeedsProduct(product1);
+                if (result){
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    public boolean isProductBought(int barcode){
+        return boughtProducts.get(barcode);
+    }
+
+    public boolean hasProduct(Product product){
+        if (!product.isDepartment()) {
+            return productsQuantity.get(product.getBarcode()) > 0;
+        } else {
+            for (Product product1 : ((Department) product).products) {
+                boolean result = hasProduct(product1);
+                if (result){
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    public int productsBoughtFromDepartment(ArrayList<Product> products){
+        int count = 0;
+        for (Product product : products) {
+            if (!stileNeedsProduct(product)){
+                count++;
+            }
+        }
+        return count;
     }
 
     public JSONObject toJson(){

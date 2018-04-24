@@ -61,6 +61,16 @@ public class Department extends Product {
         return null;
     }
 
+    public ArrayList<Product> filteredWithShoppingList(ShoppingList shoppingList){
+        ArrayList<Product> products1 = new ArrayList<>();
+        for (Product product : products) {
+            if (shoppingList.hasProduct(product)){
+                products1.add(product);
+            }
+        }
+        return products1;
+    }
+
     public static Department fromJson(JSONObject jsonObject){
         try {
             String name = jsonObject.getString("name");
